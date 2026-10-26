@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7f4" />
+    <meta
+      name="description"
+      content="Portfolio của Võ Lê Đăng Minh, sinh viên Công nghệ thông tin định hướng an ninh mạng."
+    />
+    <title>Võ Lê Đăng Minh | Portfolio</title>
+    <link rel="stylesheet" href="minh.css" />
+    <script src="minh.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="home-link" href="../../main/index.html" aria-label="Về trang chủ">
+        <span aria-hidden="true">←</span>
+      </a>
+      <a class="brand" href="#home" aria-label="Võ Lê Đăng Minh - Trang chủ">
+        <span class="brand-mark" aria-hidden="true">M.</span>
+        <span>Võ Lê Đăng Minh</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Mở menu điều hướng"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Điều hướng chính">
+        <a href="#about">Giới thiệu</a>
+        <a href="#goals">Mục tiêu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#experience">Học vấn</a>
+        <a href="#highlights">Thông tin thêm</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Chuyển sang giao diện tối"
+        aria-pressed="false"
+      >
+        <span aria-hidden="true">☾</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot"></span> Công nghệ thông tin · Định hướng an ninh mạng
+          </p>
+          <h1 id="hero-title">
+            Xin chào,<br />mình là <span>Đăng Minh.</span>
+          </h1>
+          <p class="hero-description">
+            Mình là Võ Lê Đăng Minh, sinh viên ngành Công nghệ thông tin. Mình
+            muốn phát triển trong lĩnh vực an ninh mạng và yêu thích việc dùng
+            công nghệ để tạo ra những ứng dụng hữu ích.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects"
+              >Khám phá dự án <span aria-hidden="true">↗</span></a
+            >
+            <a class="text-link" href="#contact"
+              >Kết nối với mình <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div class="hero-meta" aria-label="Thông tin nhanh">
+            <span><strong>03</strong> năm thực hành app/web cùng AI</span>
+            <span><strong>Cisco</strong> cấu hình mạng</span>
+            <span><strong>BDU</strong> Đại học chính quy</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="portrait-card">
+            <img src="minh.jpg" alt="Chân dung Võ Lê Đăng Minh" />
+            <div class="portrait-caption">
+              <span class="caption-mark" aria-hidden="true">✳</span>
+              <span
+                ><strong>Đang học hỏi</strong
+                ><small>Luôn sẵn sàng thử điều mới</small></span
+              >
+            </div>
+          </div>
+          <span class="floating-tag tag-code" aria-hidden="true"
+            >&lt; hello /&gt;</span
+          >
+          <span class="floating-tag tag-shield" aria-hidden="true"
+            >◈ Cybersecurity</span
+          >
+          <span class="hero-spark spark-one" aria-hidden="true">✳</span>
+          <span class="hero-spark spark-two" aria-hidden="true">✦</span>
+        </div>
+      </section>
+
+      <section
+        class="about section-wrap section-block"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">01 / Về mình</p>
+          <h2 id="about-title">
+            Võ Lê Đăng Minh,<br /><span>sinh viên Công nghệ thông tin.</span>
+          </h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            Mình đang theo học đại học chính quy ngành Công nghệ thông tin tại
+            Đại học Bình Dương. Mình định hướng theo đuổi an ninh mạng, đồng
+            thời quan tâm đến cách phần mềm và hệ thống mạng hoạt động.
+          </p>
+          <p>
+            Trong khoảng ba năm, từ khi học lớp 12, mình đã thực hành ứng dụng
+            AI để hỗ trợ xây dựng app và website. Mình thích làm việc nhóm,
+            phân tích code và học hỏi qua quá trình tạo sản phẩm.
+          </p>
+          <a class="text-link" href="#contact"
+            >Tìm hiểu thêm về mình <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+
+      <section
+        class="goal-section section-block"
+        id="goals"
+        aria-labelledby="goals-title"
+      >
+        <div class="section-wrap goal-layout">
+          <div>
+            <p class="eyebrow">02 / Định hướng</p>
+            <h2 id="goals-title">
+              Bảo vệ hệ thống,<br /><span>khám phá tương lai.</span>
+            </h2>
+          </div>
+          <article class="goal-card">
+            <span class="goal-icon" aria-hidden="true">◇</span>
+            <div>
+              <h3>Mục tiêu nghề nghiệp</h3>
+              <p>
+                Trước mắt, mình muốn xây dựng kiến thức và kinh nghiệm thực hành
+                trong lĩnh vực an ninh mạng. Về dài hạn, mình mong muốn tìm ra
+                phương pháp tải ý thức con người lên máy tính — một mục tiêu
+                nghiên cứu dài hạn gắn với sự giao thoa giữa công nghệ và con người.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="skills section-block"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="section-wrap">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow">03 / Năng lực</p>
+              <h2 id="skills-title">
+                Những gì mình đang <span>trau dồi.</span>
+              </h2>
+            </div>
+            <p class="section-note">
+              Ngôn ngữ lập trình, công cụ và kỹ năng cộng tác mình sử dụng.
+            </p>
+          </div>
+          <div class="skills-grid">
+            <article class="skill-card">
+              <span class="skill-number">01</span>
+              <span class="skill-icon" aria-hidden="true">⌘</span>
+              <h3>Lập trình đa ngôn ngữ</h3>
+              <p>
+                Sử dụng các ngôn ngữ lập trình để thực hành xây dựng ứng dụng và website.
+              </p>
+              <div class="skill-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                <span>Java</span><span>Python</span><span>C++</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-number">02</span>
+              <span class="skill-icon" aria-hidden="true">⌕</span>
+              <h3>Cấu hình mạng</h3>
+              <p>
+                Thực hành cấu hình mạng trên thiết bị và môi trường Cisco Packet Tracer.
+              </p>
+              <div class="skill-tags">
+                <span>Cisco</span><span>Packet Tracer</span><span>Mạng máy tính</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-number">03</span>
+              <span class="skill-icon" aria-hidden="true">◎</span>
+              <h3>Cộng tác nhóm</h3>
+              <p>
+                Phối hợp với thành viên, trao đổi ý tưởng và đóng góp vào mục tiêu chung.
+              </p>
+              <div class="skill-tags">
+                <span>Làm việc nhóm</span><span>Giao tiếp</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-number">04</span>
+              <span class="skill-icon" aria-hidden="true">✳</span>
+              <h3>AI & phân tích code</h3>
+              <p>
+                Ứng dụng AI vào quá trình làm app/web và dành thời gian đọc, phân tích mã nguồn.
+              </p>
+              <div class="skill-tags">
+                <span>AI tools</span><span>Phân tích code</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="projects section-wrap section-block"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">04 / Dự án cá nhân</p>
+            <h2 id="projects-title">Ý tưởng thành <span>sản phẩm.</span></h2>
+          </div>
+          <p class="section-note">Các ứng dụng cá nhân mình đã thực hành xây dựng.</p>
+        </div>
+        <div
+          class="project-filters"
+          role="group"
+          aria-label="Lọc dự án theo chủ đề"
+        >
+          <button
+            class="filter-button is-active"
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            Tất cả
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="web"
+            aria-pressed="false"
+          >
+            Quản lý chi tiêu
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="python"
+            aria-pressed="false"
+          >
+            AI Agent
+          </button>
+        </div>
+        <div class="project-grid" aria-live="polite">
+          <article class="project-card" data-category="web">
+            <div
+              class="project-art art-python"
+              role="img"
+              aria-label="Minh họa ứng dụng quản lý chi tiêu cá nhân"
+            >
+              <small>01 — PERSONAL FINANCE</small>
+              <svg class="project-illustration" viewBox="0 0 240 130" aria-hidden="true">
+                <rect x="51" y="14" width="137" height="103" rx="13" fill="currentColor" opacity=".12" />
+                <rect x="61" y="21" width="119" height="92" rx="10" fill="var(--surface)" />
+                <path d="M77 43h39M77 54h24" stroke="currentColor" stroke-width="4" stroke-linecap="round" opacity=".55" />
+                <rect x="77" y="68" width="25" height="28" rx="5" fill="currentColor" opacity=".2" />
+                <rect x="108" y="61" width="25" height="35" rx="5" fill="currentColor" opacity=".45" />
+                <rect x="139" y="49" width="25" height="47" rx="5" fill="currentColor" opacity=".8" />
+                <circle cx="164" cy="31" r="14" fill="currentColor" />
+                <path d="M164 23v16m5-12c0-2-2-3-5-3s-5 1-5 3 2 3 5 4 5 2 5 4-2 3-5 3-5-1-5-3" stroke="var(--surface)" stroke-width="1.7" fill="none" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="project-content">
+              <p class="project-type">ỨNG DỤNG CÁ NHÂN · QUẢN LÝ TÀI CHÍNH</p>
+              <h3>Quản lý chi tiêu cá nhân</h3>
+              <p>
+                Ứng dụng cá nhân hỗ trợ ghi nhận và theo dõi các khoản thu, chi,
+                giúp người dùng quan sát tình hình chi tiêu của mình.
+              </p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <span class="project-link">Dự án cá nhân <span aria-hidden="true">↗</span></span>
+            </div>
+          </article>
+          <article class="project-card" data-category="python">
+            <div
+              class="project-art art-security"
+              role="img"
+              aria-label="Minh họa ứng dụng AI agent kết nối API"
+            >
+              <small>02 — AI AGENT</small>
+              <svg class="project-illustration" viewBox="0 0 240 130" aria-hidden="true">
+                <path d="M120 25v17M73 86h-9V65a9 9 0 0 1 9-9h24m70 30h9V65a9 9 0 0 0-9-9h-24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                <rect x="94" y="35" width="52" height="48" rx="14" fill="currentColor" opacity=".16" stroke="currentColor" stroke-width="2" />
+                <circle cx="109" cy="55" r="3.5" fill="currentColor" />
+                <circle cx="131" cy="55" r="3.5" fill="currentColor" />
+                <path d="M108 68q12 10 24 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <circle cx="55" cy="86" r="15" fill="var(--surface)" stroke="currentColor" stroke-width="2" />
+                <circle cx="185" cy="86" r="15" fill="var(--surface)" stroke="currentColor" stroke-width="2" />
+                <circle cx="120" cy="17" r="11" fill="var(--surface)" stroke="currentColor" stroke-width="2" />
+                <path d="M55 82v8m-4-4h8m122-4v8m-4-4h8m-57-64v5m-4-2h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="project-content">
+              <p class="project-type">ỨNG DỤNG CÁ NHÂN · TÍCH HỢP AI</p>
+              <h3>AI Agent kết nối API</h3>
+              <p>
+                Ứng dụng AI agent bằng cách gọi API từ các dịch vụ AI miễn phí,
+                thực hành tích hợp dịch vụ và xây dựng luồng tương tác.
+              </p>
+              <div class="project-tags">
+                <span>AI API</span><span>Python</span><span>Ứng dụng AI</span>
+              </div>
+              <span class="project-link">Dự án cá nhân <span aria-hidden="true">↗</span></span>
+            </div>
+          </article>
+        </div>
+        <p class="filter-empty" hidden>Chưa có dự án trong chủ đề này.</p>
+      </section>
+
+      <section
+        class="education section-block"
+        id="experience"
+        aria-labelledby="education-title"
+      >
+        <div class="section-wrap education-layout">
+          <div>
+            <p class="eyebrow">05 / Học vấn & kinh nghiệm</p>
+            <h2 id="education-title">
+              Học tập và<br /><span>thực hành mỗi ngày.</span>
+            </h2>
+          </div>
+          <div class="experience-list">
+            <article class="education-card">
+              <span class="education-icon" aria-hidden="true">✳</span>
+              <div>
+                <p class="education-date">HỌC VẤN · HỆ CHÍNH QUY</p>
+                <h3>Đại học Bình Dương</h3>
+                <p>Ngành Công nghệ thông tin · Định hướng an ninh mạng</p>
+              </div>
+              <span class="education-status">Đang theo học</span>
+            </article>
+            <article class="experience-card">
+              <span class="education-icon" aria-hidden="true">⌘</span>
+              <div>
+                <p class="education-date">THỰC HÀNH CÁ NHÂN · 3 NĂM</p>
+                <h3>Ứng dụng AI phát triển app & website</h3>
+                <p>
+                  Bắt đầu từ năm lớp 12: thực hành ứng dụng AI trong quá trình
+                  xây dựng ứng dụng và website, đồng thời rèn luyện kỹ năng phân tích code.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="highlights section-wrap section-block"
+        id="highlights"
+        aria-labelledby="highlights-title"
+      >
+        <div>
+          <p class="eyebrow">06 / Thông tin thêm</p>
+          <h2 id="highlights-title">
+            Ngoài giờ học,<br /><span>mình thích khám phá.</span>
+          </h2>
+        </div>
+        <div class="highlights-grid">
+          <article class="highlight-card">
+            <span class="highlight-icon" aria-hidden="true">✳</span>
+            <h3>Chứng chỉ & giải thưởng</h3>
+            <p>Chưa có.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="highlight-icon" aria-hidden="true">♡</span>
+            <h3>Sở thích</h3>
+            <div class="hobby-tags">
+              <span>Chơi game</span><span>Ngủ</span><span>Phân tích code</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="contact section-wrap section-block"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="contact-intro">
+          <p class="eyebrow">07 / Kết nối</p>
+          <h2 id="contact-title">
+            Có điều thú vị?<br /><span>Mình cùng trao đổi nhé.</span>
+          </h2>
+          <p>
+            Mình luôn sẵn lòng kết nối để học hỏi, chia sẻ ý tưởng và cùng phát
+            triển.
+          </p>
+          <a class="contact-email" href="mailto:25050058@student.bdu.edu.vn"
+            >25050058@student.bdu.edu.vn <span aria-hidden="true">↗</span></a
+          >
+          <p class="contact-location">
+            <span aria-hidden="true">⌖</span> Bàu Bàng, TP. Hồ Chí Minh
+          </p>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="contact-name">Họ và tên</label>
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Tên của bạn"
+              required
+              aria-describedby="name-error"
+            />
+            <span class="field-error" id="name-error"></span>
+          </div>
+          <div class="form-row">
+            <label for="contact-email">Email</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="ban@email.com"
+              required
+              aria-describedby="email-error"
+            />
+            <span class="field-error" id="email-error"></span>
+          </div>
+          <div class="form-row">
+            <label for="contact-message">Lời nhắn</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="4"
+              placeholder="Bạn muốn trao đổi điều gì?"
+              required
+              aria-describedby="message-error"
+            ></textarea>
+            <span class="field-error" id="message-error"></span>
+          </div>
+          <button class="button button-primary submit-button" type="submit">
+            Soạn email <span aria-hidden="true">↗</span>
+          </button>
+          <p
+            class="form-status"
+            id="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"
+        ><span class="brand-mark" aria-hidden="true">M.</span
+        ><span>Võ Lê Đăng Minh</span></a
+      >
+      <p>Thiết kế và xây dựng với sự tò mò <span aria-hidden="true">✳</span></p>
+      <a class="back-to-top" href="#home">Lên đầu trang ↑</a>
+    </footer>
+  </body>
+</html>
