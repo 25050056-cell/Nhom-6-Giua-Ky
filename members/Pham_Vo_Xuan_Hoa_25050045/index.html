@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Cá Nhân - Phạm Võ Xuân Hòa</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- File CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+    <!-- CANVAS BACKGROUND (Hiệu ứng Cánh hoa rơi) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- 1. HEADER / NAVBAR / BANNER -->
+    <header>
+        <a href="../../main/index.html" class="back-home-btn" title="Về trang chủ">
+               <i class="fa-solid fa-arrow-left"></i>
+               <span>Trang chủ</span>
+        </a>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#hero">Giới thiệu</a></li>
+                <li><a href="#objective">Mục tiêu</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#experience">Học vấn</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#achievements">Chứng chỉ</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggleBtn" title="Đổi giao diện Sáng/Tối"><i class="fa-solid fa-moon"></i></button>
+            <button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main>
+        <!-- 2. GIỚI THIỆU BẢN THÂN -->
+        <section id="hero" class="hero fade-in-section">
+            <div class="hero-avatar-wrapper">
+                <img src=" Xuan_Hoa_045.jpg" alt="Ảnh đại diện Phạm Võ Xuân Hòa" class="avatar">
+            </div>
+            <div class="hero-info">
+                <span class="badge">ĐẠI HỌC BÌNH DƯƠNG</span>
+                <h1>Phạm Võ Xuân Hòa</h1>
+                <p class="title">Sinh viên CNTT & Định hướng Thiết kế Đồ họa</p>
+                <p class="desc">Xin chào! Mình là sinh viên Công nghệ Thông tin BDU có niềm đam mê với vẽ và thiết kế kỹ thuật số. Mình có khả năng tự học tốt, sử dụng được các phần mềm thiết kế cơ bản và luôn cố gắng cập nhật các xu hướng mới.</p>
+            </div>
+        </section>
+
+        <!-- 3. MỤC TIÊU NGHỀ NGHIỆP -->
+        <section id="objective" class="fade-in-section">
+            <h2><i class="fa-solid fa-bullseye"></i> Mục tiêu nghề nghiệp</h2>
+            <div class="objective-grid">
+                <div class="obj-card">
+                    <div class="obj-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Mục tiêu ngắn hạn</h3>
+                    <p>Nắm vững các nền tảng lập trình web (HTML/CSS/JS), hoàn thành tốt các môn học chuyên ngành CNTT và tìm kiếm cơ hội thực tập trong tương lai.</p>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Mục tiêu dài hạn</h3>
+                    <p>Trở thành một Graphic Designer chuyên nghiệp có khả năng kết hợp tư duy công nghệ và tính thẩm mỹ đồ họa để xây dựng các sản phẩm trong tương lai.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. KỸ NĂNG -->
+        <section id="skills" class="fade-in-section">
+            <h2><i class="fa-solid fa-laptop-code"></i> Kỹ năng</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-python skill-icon"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-html5 skill-icon"></i>
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-comments skill-icon"></i>
+                    <h3>Giao tiếp</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-people-group skill-icon"></i>
+                    <h3>Làm việc nhóm</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. HỌC VẤN / KINH NGHIỆM / HOẠT ĐỘNG -->
+        <section id="experience" class="fade-in-section">
+            <h2><i class="fa-solid fa-briefcase"></i> Học vấn & Hoạt động</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time">2025 - Hiện tại</span>
+                    <h3>Sinh viên Công nghệ Thông tin</h3>
+                    <p><strong>Trường Đại học Bình Dương</strong> - Theo học các môn: Cấu trúc dữ liệu & Thuật toán, Lập trình hướng đối tượng (C++/Python), Mạng máy tính và Thiết kế Web cùng với các môn khác.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">2026</span>
+                    <h3>Thành viên nhóm dự án thiết kế Web</h3>
+                    <p>Thực hành làm việc nhóm, xây dựng các bài tập giữa kỳ môn Web, thiết kế giao diện chuẩn Responsive và tích hợp hiệu ứng JavaScript.</p>
+                </div>
+            </div>
+        </section>
+
+     <!-- 6. DỰ ÁN CÁ NHÂN -->
+        <section id="projects" class="fade-in-section">
+            <h2><i class="fa-solid fa-folder-open"></i> Dự án cá nhân</h2>
+            <div class="projects-grid">
+                <!-- Dự án 1: Website Thực Đơn Quán Cafe -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="Du_an1.jpg" alt=" Ảnh dự án Thực Đơn Quán Cafe" class="project-thumbnail">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">HTML / CSS / Web Design</span>
+                        <h3>Website Thực Đơn Quán Café (Baitap1)</h3>
+                        <p>Trang web trưng bày thực đơn đồ uống với hình ảnh trực quan, bố cục giao diện bắt mắt, sử dụng các hình ảnh minh họa chất lượng cao (cafe, meeting).</p>
+                    </div>
+                </div>
+
+                <!-- Dự án 2: Website Lớp Học Nấu Ăn -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src= "Du_an2.jpg" alt="Ảnh dự án Lớp Học Nấu Ăn" class="project-thumbnail">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">HTML / CSS / VS CODE</span>
+                        <h3>Website Lớp Học Nấu Ăn (Baitap2)</h3>
+                        <p>Dự án web hướng dẫn nấu các món ăn hấp dẫn (teriyaki, bokchoi,...), giúp người dùng nấu những món ăn ngon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 7. CHỨNG CHỈ / GIẢI THƯỞNG / SỞ THÍCH -->
+        <section id="achievements" class="fade-in-section">
+            <h2><i class="fa-solid fa-award"></i> Chứng chỉ / Giải thưởng / Sở thích</h2>
+            <div class="achieve-grid">
+                <div class="achieve-box">
+                    <h3><i class="fa-solid fa-certificate"></i> Chứng chỉ & Giải thưởng</h3>
+                    <p class="status-text">Chưa có <em>(Đang trong quá trình tích lũy và học tập thêm)</em></p>
+                </div>
+                <div class="achieve-box">
+                    <h3><i class="fa-solid fa-heart"></i> Sở thích cá nhân</h3>
+                    <ul class="hobby-list">
+                        <li><i class="fa-solid fa-check"></i> Nghe nhạc, xem phim nghệ thuật.</li>
+                        <li><i class="fa-solid fa-check"></i> Chơi game giải trí (Minecraft,...).</li>
+                        <li><i class="fa-solid fa-check"></i> Thưởng thức món ngon.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM LIÊN HỆ -->
+        <section id="contact" class="fade-in-section">
+            <h2><i class="fa-solid fa-envelope"></i> Liên hệ với mình</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" id="name" placeholder="Nhập họ tên của bạn...">
+                    <span class="error-msg" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Nhập email của bạn...">
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Lời nhắn</label>
+                    <textarea id="message" rows="4" placeholder="Nhập nội dung lời nhắn..."></textarea>
+                    <span class="error-msg" id="messageError"></span>
+                </div>
+                <button type="submit" class="submit-btn">Gửi tin nhắn <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </section>
+    </main>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">Gửi tin nhắn thành công!</div>
+
+    <!-- File JS -->
+    <script src="script.js"></script>
+</body>
+</html>
