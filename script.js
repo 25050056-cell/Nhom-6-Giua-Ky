@@ -1,143 +1,147 @@
-// 1. Canvas Hiệu ứng Cánh hoa (ko giong thi ke)
-const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
-let petals = [];
+document.addEventListener('DOMContentLoaded', () => {
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+    /* 1. CHẾ ĐỘ DARK / LIGHT MODE */
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeBtn.querySelector('i');
+    const savedTheme = localStorage.getItem('theme');
 
-class Petal {
-    constructor() {
-        this.reset();
-    }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = -20; // Bắt đầu từ phía trên màn hình
-        this.size = Math.random() * 8 + 4; // Kích thước cánh hoa
-        this.speedY = Math.random() * 1.2 + 0.5; // Tốc độ rơi xuống
-        this.speedX = Math.random() * 1 - 0.5; // Độ lượn sóng ngang nhẹ
-        this.rotation = Math.random() * 360; // Góc xoay
-        this.rotationSpeed = Math.random() * 2 - 1; // Tốc độ xoay
-        this.opacity = Math.random() * 0.5 + 0.3; // Độ trong suốt
-    }
-    update() {
-        this.y += this.speedY;
-        this.x += this.speedX + Math.sin(this.y / 30) * 0.5; // Hiệu ứng gió thổi nhẹ
-        this.rotation += this.rotationSpeed;
-
-        // Nếu rơi quá đáy màn hình thì reset lại từ đỉnh
-        if (this.y > canvas.height + 20) {
-            this.reset();
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'dark') {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
         }
     }
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate((this.rotation * Math.PI) / 180);
-        ctx.globalAlpha = this.opacity;
-        
-        // Vẽ hình dáng cánh hoa mềm mại (dùng hình ellipse)
-        ctx.fillStyle = '#e9d5ff';
-        ctx.beginPath();
-        ctx.ellipse(0, 0, this.size, this.size / 2, 0, 0, Math.PI * 2);
-        ctx.fill();
 
-        ctx.restore();
-    }
-}
-
-// Tạo 40 cánh hoa rơi (nhiu qua so lag)
-for (let i = 0; i < 40; i++) {
-    let p = new Petal();
-    p.y = Math.random() * canvas.height; // Phân bổ sẵn ngẫu nhiên khắp màn hình khi mới load
-    petals.push(p);
-}
-
-function animateCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    petals.forEach(petal => {
-        petal.update();
-        petal.draw();
-    });
-    requestAnimationFrame(animateCanvas);
-}
-animateCanvas();
-
-// 2. Mobile Menu Toggle
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('nav-links');
-
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// 3. Dark / Light Mode Toggle
-const themeToggleBtn = document.getElementById('themeToggleBtn');
-const body = document.body;
-
-themeToggleBtn.addEventListener('click', () => {
-    if (body.getAttribute('data-theme') === 'light') {
-        body.setAttribute('data-theme', 'dark');
-        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    } else {
-        body.setAttribute('data-theme', 'light');
-        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    }
-});
-
-// 4. Scroll Reveal Animation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+    themeBtn.addEventListener('click', () => {
+        let isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
         }
     });
-}, { threshold: 0.1 });
 
-document.querySelectorAll('.fade-in-section').forEach(section => {
-    observer.observe(section);
-});
+    /* 2. MOBILE MENU TOGGLE */
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navbar = document.getElementById('navbar');
 
-// 5. Form Validation & Toast Notification
-const contactForm = document.getElementById('contactForm');
-const toast = document.getElementById('toast');
+    mobileBtn.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    let isValid = true;
-    
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
+    // Tự động đóng menu mobile khi nhấn chọn link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
 
-    if (name.value.trim() === '') {
-        document.getElementById('nameError').innerText = 'Vui lòng nhập họ tên!';
-        isValid = false;
-    } else {
-        document.getElementById('nameError').innerText = '';
+    /* 3. TYPING ANIMATION (HIỆU ỨNG GÕ CHỮ) */
+    const typingText = document.querySelector('.typing-text');
+    const roles = ['Graphic Designer', 'Sinh viên CNTT'];
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+
+    function type() {
+        const current = roles[roleIdx];
+        if (isDeleting) {
+            typingText.textContent = current.substring(0, charIdx - 1);
+            charIdx--;
+        } else {
+            typingText.textContent = current.substring(0, charIdx + 1);
+            charIdx++;
+        }
+
+        let speed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIdx === current.length) {
+            speed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+            isDeleting = false;
+            roleIdx = (roleIdx + 1) % roles.length;
+            speed = 500;
+        }
+
+        setTimeout(type, speed);
     }
+    type();
 
-    if (email.value.trim() === '' || !email.value.includes('@')) {
-        document.getElementById('emailError').innerText = 'Vui lòng nhập email hợp lệ!';
-        isValid = false;
-    } else {
-        document.getElementById('emailError').innerText = '';
-    }
+    /* 4. SCROLL TO TOP & ACTIVE NAV LINK */
+    const scrollTop = document.getElementById('scroll-top');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    if (message.value.trim() === '') {
-        document.getElementById('messageError').innerText = 'Vui lòng nhập lời nhắn!';
-        isValid = false;
-    } else {
-        document.getElementById('messageError').innerText = '';
-    }
+    window.addEventListener('scroll', () => {
+        // Nút Scroll to top
+        if (window.scrollY > 300) {
+            scrollTop.style.display = 'flex';
+        } else {
+            scrollTop.style.display = 'none';
+        }
 
-    if (isValid) {
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3000);
-        contactForm.reset();
-    }
+        // Active link khi scroll qua các phần
+        let currentSection = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(currentSection)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    scrollTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* 5. KIỂM TRA FORM LIÊN HỆ (FORM VALIDATION) */
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        // Validation Họ tên & Nội dung
+        ['name', 'message'].forEach(id => {
+            const input = document.getElementById(id);
+            if (!input.value.trim()) {
+                input.parentElement.classList.add('error');
+                valid = false;
+            } else {
+                input.parentElement.classList.remove('error');
+            }
+        });
+
+        // Validation Email
+        const email = document.getElementById('email');
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!email.value.match(emailPattern)) {
+            email.parentElement.classList.add('error');
+            valid = false;
+        } else {
+            email.parentElement.classList.remove('error');
+        }
+
+        // Hiển thị thông báo khi hợp lệ
+        if (valid) {
+            const successMsg = document.getElementById('form-success');
+            successMsg.style.display = 'block';
+            form.reset();
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 4000);
+        }
+    });
 });
